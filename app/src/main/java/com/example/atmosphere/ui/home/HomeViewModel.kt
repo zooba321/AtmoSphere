@@ -112,7 +112,9 @@ class HomeViewModel(private val repository: WeatherRepository) : ViewModel() {
                     it.copy(
                         isLoading = false,
                         weatherData = data,
-                        selectedHourIndex = 12 // 重置為中午12點
+                        selectedHourIndex = 12,
+                        // 同樣解析歷史資料中的海洋數據
+                        marineData = parseMarineDataFromForecast(data.forecast.forecastday.first())
                     )
                 }
             }.onFailure { error ->
