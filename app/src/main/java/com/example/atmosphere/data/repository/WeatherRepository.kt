@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter
 
 class WeatherRepository(private val apiService: WeatherApiService) {
 
-    private val apiKey = "dbf7f68f6062422bbe3121931251506" // <-- 在此處替換你的 API Key
+    private val apiKey = "" // <-- 在此處替換你的 API Key
 
     suspend fun getWeatherForecast(location: String): Result<WeatherData> {
         return try {
